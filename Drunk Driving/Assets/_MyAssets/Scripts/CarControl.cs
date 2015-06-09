@@ -18,7 +18,7 @@ public class CarControl : MonoBehaviour {
 
         Rigidbody rb = (Rigidbody)GetComponent(typeof(Rigidbody));
         Vector3 temp = rb.centerOfMass;
-        temp.y = -0.1f; //the f indicates that this is a floating point variable, alkup: -0.9
+        temp.y = -0.1f; //the f indicates that this is a floating point variable, original: -0.9
         rb.centerOfMass = temp;
 	
 	}
