@@ -80,6 +80,7 @@
      <Compile Include="Assets\OVR\Scripts\Util\OVRScreenFade.cs" />
      <Compile Include="Assets\OVR\Scripts\Util\OVRTrackerBounds.cs" />
      <Compile Include="Assets\_MyAssets\Scripts\CarControl.cs" />
+     <Compile Include="Assets\_MyAssets\Scripts\EndingTrigger.cs" />
      <Compile Include="Assets\_MyAssets\Scripts\MiniVanController.cs" />
      <None Include="Assets\Plugins\donotdelete.txt" />
      <None Include="Assets\Plugins\Android\assets\donotdelete.txt" />
