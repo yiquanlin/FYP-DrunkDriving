@@ -1,20 +1,24 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EndingTrigger : MonoBehaviour {
+public class EndingTrigger : MonoBehaviour
+{
 
-    void onTriggerEnter(Collider other) 
+    // Use this for initialization
+    void Start()
     {
-        Destroy(other.gameObject);
+
     }
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        Destroy(other.gameObject);
+        print("collision hit");
+    }
 }
