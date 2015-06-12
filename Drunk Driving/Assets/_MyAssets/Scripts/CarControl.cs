@@ -7,6 +7,7 @@ public class CarControl : MonoBehaviour {
     public WheelCollider WheelFR;
     public WheelCollider WheelRL;
     public WheelCollider WheelRR;
+
     public float maxTorque = 50f;
     public float steeringForce = 25f;
 
@@ -26,8 +27,11 @@ public class CarControl : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+		WheelFL.motorTorque = maxTorque * Input.GetAxis ("Vertical");
+		WheelFR.motorTorque = maxTorque * Input.GetAxis ("Vertical");
         WheelRR.motorTorque = maxTorque * Input.GetAxis("Vertical");
         WheelRL.motorTorque = maxTorque * Input.GetAxis("Vertical");
+
         WheelFL.steerAngle = steeringForce * Input.GetAxis("Horizontal");
         WheelFR.steerAngle = steeringForce * Input.GetAxis("Horizontal");
 	
