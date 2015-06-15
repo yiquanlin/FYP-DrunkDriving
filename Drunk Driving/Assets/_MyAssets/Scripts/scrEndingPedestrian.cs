@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EndingTrigger : MonoBehaviour
-{
+public class scrEndingPedestrian : MonoBehaviour {
 
 
     // Use this for initialization
@@ -17,8 +16,8 @@ public class EndingTrigger : MonoBehaviour
 
     }
 
-    
-    
+
+
 
     void OnTriggerEnter(Collider other)
     {
@@ -26,11 +25,9 @@ public class EndingTrigger : MonoBehaviour
 
         //gameOver = true;
         Application.LoadLevel("sceGameOverTest");
-       
+
         print("collision hit");
     }
 
 
-    
-    
 }

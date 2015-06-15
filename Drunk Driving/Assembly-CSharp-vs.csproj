@@ -82,6 +82,9 @@
      <Compile Include="Assets\_MyAssets\Scripts\CarControl.cs" />
      <Compile Include="Assets\_MyAssets\Scripts\EndingTrigger.cs" />
      <Compile Include="Assets\_MyAssets\Scripts\MiniVanController.cs" />
+     <Compile Include="Assets\_MyAssets\Scripts\Speedometer.cs" />
+     <Compile Include="Assets\_MyAssets\Scripts\scrEndingPedestrian.cs" />
+     <Compile Include="Assets\_MyAssets\Scripts\scrPedestrianAI.cs" />
      <None Include="Assets\Plugins\donotdelete.txt" />
      <None Include="Assets\Plugins\Android\assets\donotdelete.txt" />
      <None Include="Assets\Plugins\x86_64\donotdelete.txt" />
