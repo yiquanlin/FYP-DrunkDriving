@@ -8,7 +8,7 @@ public class CarControl : MonoBehaviour {
     public WheelCollider WheelRL;
     public WheelCollider WheelRR;
 
-    public float maxTorque = 50f;
+    public float maxTorque = 100f;
     public float steeringForce = 25f;
 
 	// Use this for initialization
@@ -26,14 +26,26 @@ public class CarControl : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-		WheelFL.motorTorque = maxTorque * Input.GetAxis ("Vertical");
-		WheelFR.motorTorque = maxTorque * Input.GetAxis ("Vertical");
-        WheelRR.motorTorque = maxTorque * Input.GetAxis("Vertical");
-        WheelRL.motorTorque = maxTorque * Input.GetAxis("Vertical");
-
-        WheelFL.steerAngle = steeringForce * Input.GetAxis("Horizontal");
-        WheelFR.steerAngle = steeringForce * Input.GetAxis("Horizontal");
+		if (Input.GetKey (KeyCode.W)) {
+			WheelFL.motorTorque = maxTorque * Input.GetAxis ("Vertical");
+			WheelFR.motorTorque = maxTorque * Input.GetAxis ("Vertical");
+			WheelRR.motorTorque = maxTorque * Input.GetAxis ("Vertical");
+			WheelRL.motorTorque = maxTorque * Input.GetAxis ("Vertical");
+		}
+		if (Input.GetKey (KeyCode.S)) {
+			WheelFL.motorTorque = maxTorque * Input.GetAxis ("Vertical");
+			WheelFR.motorTorque = maxTorque * Input.GetAxis ("Vertical");
+			WheelRR.motorTorque = maxTorque * Input.GetAxis ("Vertical");
+			WheelRL.motorTorque = maxTorque * Input.GetAxis ("Vertical");
+		}
+		if (Input.GetKey (KeyCode.A)) {
+			WheelFL.steerAngle = steeringForce * Input.GetAxis ("Horizontal");
+			WheelFR.steerAngle = steeringForce * Input.GetAxis ("Horizontal");
+		}
+		if (Input.GetKey (KeyCode.D)) {
+			WheelFL.steerAngle = steeringForce * Input.GetAxis ("Horizontal");
+			WheelFR.steerAngle = steeringForce * Input.GetAxis ("Horizontal");
+		}
 	
 	}
 }
