@@ -25,7 +25,7 @@ public class EndingTrigger : MonoBehaviour
         //Destroy(other.gameObject);
 
         //gameOver = true;
-        Application.LoadLevel("sceGameOverTest");
+        Application.LoadLevel("sceEndingNPCCar");
        
         print("collision hit");
     }

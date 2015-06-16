@@ -24,9 +24,9 @@ public class scrEndingPedestrian : MonoBehaviour {
         //Destroy(other.gameObject);
 
         //gameOver = true;
-        Application.LoadLevel("sceGameOverTest");
+        Application.LoadLevel("sceEndingPedestrian");
 
-        print("collision hit");
+        print("Ending pedestrian");
     }
 
 
