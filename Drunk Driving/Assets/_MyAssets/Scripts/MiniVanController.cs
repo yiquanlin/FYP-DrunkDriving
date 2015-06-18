@@ -8,7 +8,6 @@ public class MiniVanController : MonoBehaviour {
 	public WheelCollider WheelRL;
 	public WheelCollider WheelRR;
 
-
 	public float maxTorque = 15f;
 	public float steeringForce = 30f;
 
@@ -16,7 +15,6 @@ public class MiniVanController : MonoBehaviour {
 	public float rearturningAngle = 5f;
 	public float frontAngle;
 	public float rearAngle;
-
 
 	// Use this for initialization
 	void Start () {
@@ -29,6 +27,7 @@ public class MiniVanController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
 		frontAngle = frontturningAngle * (Time.deltaTime);
 		rearAngle = rearturningAngle * (Time.deltaTime);
 
@@ -40,7 +39,7 @@ public class MiniVanController : MonoBehaviour {
 			WheelRR.motorTorque = maxTorque * Input.GetAxis ("Vertical");
 		}
 		if (Input.GetKey (KeyCode.DownArrow)) {
-			/*Moving Forward*/
+			/*Moving Backward*/	
 			WheelFL.motorTorque = maxTorque * Input.GetAxis ("Vertical");
 			WheelFR.motorTorque = maxTorque * Input.GetAxis ("Vertical");
 			WheelRL.motorTorque = maxTorque * Input.GetAxis ("Vertical");
@@ -66,9 +65,19 @@ public class MiniVanController : MonoBehaviour {
 			WheelRL.transform.Rotate (new Vector3 (0, 1, 0), rearAngle);
 			WheelRR.transform.Rotate (new Vector3 (0, 1, 0), rearAngle);
 		}
-
+		if (Input.GetKey ("space")) {
+			WheelFL.motorTorque = 0;
+			WheelFR.motorTorque = 0;
+			WheelRL.motorTorque = 0;
+			WheelRR.motorTorque = 0;
+		}
 	}
 
-	void Drifting () {
+	void OnCollisionEnter(Collision col)
+	{
+		if (col.gameObject.tag == "SkyCar") {
+			col.rigidbody.AddForce(-Vector3.forward * 1000, ForceMode.Force);
+			Debug.Log("Van Hit!");
+		}
 	}
 }
